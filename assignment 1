@@ -1,0 +1,28 @@
+student = {
+    "name": "Rahul",
+    "age": 20,
+    "course": "Python"
+}
+
+print("Original Dictionary:", student)
+student["marks"] = 85
+print("After adding:", student)
+student["age"] = 21
+print("After updating:", student)
+print("Name:", student["name"])
+student.pop("course")
+print("After removing:", student)
+print("Is 'name' present?", "name" in student)
+print("Keys:", student.keys())
+print("Values:", student.values())
+numbers = (10, 20, 30, 40, 50)
+print("\nOriginal Tuple:", numbers)
+print("First element:", numbers[0])
+print("First 3 elements:", numbers[:3])
+print("Count of 20:", numbers.count(20))
+print("Index of 30:", numbers.index(30))
+print("Length:", len(numbers))
+numbers = numbers + (60,)
+print("After adding:", numbers)
+numbers = tuple(x for x in numbers if x != 30)
+print("After removing 30:", numbers)
