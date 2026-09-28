@@ -1,0 +1,17 @@
+import re
+
+def is_valid_string(s):
+    return re.fullmatch(r'[a-zA-Z0-9]+', s) is not None
+
+
+print(is_valid_string("Hello123"))   
+print(is_valid_string("ABCxyz123"))  
+print(is_valid_string("Hello_123"))  
+print(is_valid_string("Hello 123"))  
+print(is_valid_string("Hello@123"))  
+print(is_valid_string(""))           
+
+if re.fullmatch(r'[a-zA-Z0-9]+', text):
+    print("Valid")
+else:
+    print("Invalid")
