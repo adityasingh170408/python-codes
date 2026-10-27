@@ -1,0 +1,27 @@
+
+import pandas as pd
+file = input("Enter file name (.csv/.xls/.xlsx): ")
+
+if file.endswith(".csv"):
+    df = pd.read_csv(file)
+else:
+    df = pd.read_excel(file)
+
+print("Original Data:")
+print(df.head())
+
+print(df.info())
+
+df.drop_duplicates(inplace=True)
+
+for col in df.columns:
+    if df[col].dtype == "object":
+        df[col] = df[col].fillna(df[col].mode()[0])
+    else:
+        df[col] = df[col].fillna(df[col].mean())
+
+df.to_csv("cleaned_data.csv", index=False)
+
+print("Preprocessed Data:")
+print(df.head())
+print("Data preprocessing completed!")
