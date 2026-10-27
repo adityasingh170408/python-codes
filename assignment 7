@@ -1,0 +1,23 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df = pd.read_csv("data.csv")
+print(df.head())
+
+plt.plot(df['Name'], df['Marks'])
+plt.title("Line Plot")
+plt.show()
+
+plt.bar(df['Name'], df['Marks'])
+plt.title("Bar Plot")
+plt.show()
+
+plt.scatter(df['Marks'], df['Age'])
+plt.title("Scatter Plot")
+plt.show()
+
+sns.heatmap(df.select_dtypes(include='number').corr(),
+            annot=True, cmap='coolwarm')
+plt.title("Correlation Heatmap")
+plt.show()
